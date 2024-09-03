@@ -1,30 +1,37 @@
 import time
 
-from selenium.common import TimeoutException
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from initial import *
+
 def schedule():
-    # time.sleep(1)
     driver.find_element(by=AppiumBy.XPATH, value="//android.widget.FrameLayout[@resource-id='android:id/content']/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.View").click()
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='Schedule Delivery Order']").click()
+    time.sleep(1)
+    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='Schedule Load Order']").click()
     time.sleep(1)
 
-    # search for customer
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='search']").send_keys("alex")
-    driver.implicitly_wait(5)
+    # search for terminal
+    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='search']").send_keys("terminal ocean")
+    time.sleep(1)
     driver.find_element(by=AppiumBy.XPATH, value="//android.view.ViewGroup[@resource-id='cell-0']").click()
     time.sleep(1)
 
-    # create order
-    driver.find_element(by=AppiumBy.XPATH, value="//android.view.ViewGroup[@resource-id='customer']").click()
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='Jay-c ship-to']").click()
+    # select product
+    driver.find_element(by=AppiumBy.XPATH, value="//android.view.ViewGroup[@resource-id='product-0']").click()
+    driver.find_element(by=AppiumBy.XPATH, value="//android.view.ViewGroup[@resource-id='default-101010']/android.view.ViewGroup").click()
+
+    # gross
+    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='vol-0']").send_keys(4000)
+
+    # select supplier
+    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]").click()
+    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='Aditya Supplier']").click()
+    time.sleep(3)
+
     driver.find_element(by=AppiumBy.XPATH, value="//android.view.ViewGroup[@resource-id='submit']").click()
 
-    # verify
+    # verify toast message
     try:
         # Wait for the toast message to appear with explicit wait
         toast_message_element = WebDriverWait(driver, 10).until(
@@ -36,11 +43,10 @@ def schedule():
 
         # Verify that the toast message contains the word "Transfer"
         assert "New Order" in toast_message_text
-        print("Toast message verified, new order created!")
+        print("Toast message verified, new order schedule created!")
 
     except Exception as e:
         print("Failed to verify toast message: {str(e)}")
 
 initial()
 schedule()
-

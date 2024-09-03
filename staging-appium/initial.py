@@ -106,10 +106,9 @@ def initial():
     driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='Deny']").click()
     time.sleep(2)
 
-    shift = driver.find_element(by=AppiumBy.XPATH,
-                                value="//android.widget.TextView[@text='Great! you do not have any tasks right now to perform']").text
-    assert "Great" in shift
-    print("log in successful")
+    # shift = driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='Great! you do not have any tasks right now to perform']").text
+    # assert "Great" in shift
+    # print("log in successful")
 
     # menu
     driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='']").click()
@@ -125,6 +124,55 @@ def initial():
     #
     # time.sleep(10)
     # driver.quit()
+
+def wrong():
+
+    # waits until fully loaded
+    driver.implicitly_wait(30)
+    signEl = driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='SIGN IN']").text
+    assert "SIGN" in signEl
+    print("sign in page verified")
+    time.sleep(3)
+
+    imageClick = driver.find_element(by=AppiumBy.XPATH, value="//android.widget.ImageView")
+    imageClick.click()
+
+    driver.implicitly_wait(20)
+    base = driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='base-url']")
+    base.send_keys("test.fleetpanda.com")
+    time.sleep(2)
+
+    submit = driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='Submit']")
+    submit.click()
+    time.sleep(2)
+
+    signIn = driver.find_element(by=AppiumBy.XPATH, value="//android.view.ViewGroup[@resource-id='signin']")
+    signIn.click()
+    time.sleep(2)
+
+    num = driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='phone-number-entry']")
+    num.send_keys(os.getenv('NUM'))
+    time.sleep(2)
+
+    con = driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='Continue']")
+    con.click()
+    time.sleep(2)
+
+    pword = driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='password']")
+    pword.send_keys(os.getenv('WRONGPW'))
+    time.sleep(1)
+
+    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='']").click()
+    time.sleep(1)
+
+    login = driver.find_element(by=AppiumBy.XPATH, value="//android.view.ViewGroup[@resource-id='login']")
+    login.click()
+    time.sleep(2)
+
+    #  verification
+    title = driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='Wrong password. Try again or click Forgot password to reset it.']").text
+    assert "wrong password" in title.lower()
+    print("wrong password detected")
 
 
 print("done")

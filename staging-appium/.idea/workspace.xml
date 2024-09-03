@@ -34,6 +34,9 @@
     "Python.fuelTransfer.executor": "Run",
     "Python.initial.executor": "Run",
     "Python.record.executor": "Run",
+    "Python.scheduleDelivery.executor": "Run",
+    "Python.scheduleLoad.executor": "Run",
+    "Python.wrongPassword.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master"
   }
