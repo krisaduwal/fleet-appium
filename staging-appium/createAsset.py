@@ -12,8 +12,8 @@ PlateNum = [67867, 45699, 1212, 34345, 55656, 78778, 6656, 8877, 7777, 9858, 646
 # driver.quit()
 
 def create():
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='']").click()
-    time.sleep(2)
+    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='']").click()
+    # time.sleep(2)
 
     # create
     driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='Add Customer Assets']").click()

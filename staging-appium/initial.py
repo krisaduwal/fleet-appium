@@ -21,8 +21,8 @@ options = AppiumOptions()
 options.load_capabilities({
     "platformName": "Android",
     "appium:automationName": "uiautomator2",
-    "appium:platformVersion": "15",
-    "appium:deviceName": "Pixel 7a API 35",
+    "appium:platformVersion": "12",
+    "appium:deviceName": "Pixel 5 API 31",
     "appium:app": "C:\\Users\\acer\\Downloads\\app-staging-release.apk",
     "appium:ensureWebviewsHavePages": True,
     "appium:nativeWebScreenshot": True,
@@ -116,16 +116,16 @@ def initial():
     time.sleep(2)
 
     # settings
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='Settings']").click()
-    time.sleep(1)
+    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='Settings']").click()
+    # time.sleep(1)
 
-    # darkmode
-    driver.find_element(by=AppiumBy.XPATH,
-                        value="//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup").click()
-
-    time.sleep(100)
-    driver.quit()
+    # # darkmode
+    # driver.find_element(by=AppiumBy.XPATH,
+    #                     value="//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup").click()
+    #
+    # time.sleep(10)
+    # driver.quit()
 
 
 print("done")
-initial()
+# initial()
