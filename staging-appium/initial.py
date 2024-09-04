@@ -6,6 +6,8 @@ from dotenv import load_dotenv
 from appium import webdriver
 from appium.options.common.base import AppiumOptions
 from appium.webdriver.common.appiumby import AppiumBy
+from selenium.webdriver.support import expected_conditions as EC
+
 
 # For W3C actions
 from selenium.webdriver.common.action_chains import ActionChains
