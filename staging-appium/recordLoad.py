@@ -14,7 +14,7 @@ def load():
     # choose truck
     driver.find_element(by=AppiumBy.XPATH, value="//android.view.ViewGroup[@resource-id='asset-0']").click()
     driver.find_element(by=AppiumBy.XPATH, value="//android.view.ViewGroup[@resource-id='default-107 - LCR']/android.view.ViewGroup").click()
-    time.sleep(1)
+    time.sleep(4)
 
     # trailer
     driver.find_element(by=AppiumBy.XPATH, value="//android.view.ViewGroup[@resource-id='asset-1']").click()
@@ -26,7 +26,7 @@ def load():
     time.sleep(1)
 
     # terminal
-    driver.find_element(by=AppiumBy.XPATH, value="//android.view.ViewGroup[@resource-id='cell-1']").click()
+    driver.find_element(by=AppiumBy.XPATH, value="//android.view.ViewGroup[@resource-id='cell-2']").click()
     time.sleep(2)
 
     driver.find_element(by=AppiumBy.XPATH, value="//android.view.ViewGroup[@resource-id='submit']").click()
@@ -48,9 +48,9 @@ def load():
     driver.find_element(by=AppiumBy.XPATH, value="//android.view.ViewGroup[@content-desc='Photo taken on Sep 3, 2024 10:52:31 AM']").click()
     time.sleep(2)
     #       card info
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='card-in-time']").send_keys("1515")
+    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='card-in-time']").send_keys("1515")
     time.sleep(1)
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='card-out-time']").send_keys("1555")
+    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='card-out-time']").send_keys("1020")
     #       card date
     driver.find_element(by=AppiumBy.XPATH, value="//android.view.ViewGroup[@resource-id='card-in-date']").click()
     driver.find_element(by=AppiumBy.XPATH, value="//android.view.View[@content-desc='02 September 2024']").click()
@@ -76,30 +76,54 @@ def load():
     driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='total-net']").send_keys(13)
     time.sleep(1)
 
+    # el = driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-12']")
+    # action = ActionChains(driver)
+    # action.move_to_element(el).send_keys("1").perform()
+    # time.sleep(3)
+    # driver.find_element(by=AppiumBy.ANDROID_UIAUTOMATOR, value=
+    #     'new UiScrollable(new UiSelector().text("Add more products from BOL").scrollable(true)).scrollToEnd(1, 5)'
+    # )
+    # time.sleep(2)
+
     # breakdown
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-0']").send_keys("1")
+    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-0']").send_keys("13")
     time.sleep(1)
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-1']").send_keys("1")
-    time.sleep(1)
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-3']").send_keys("1")
-    time.sleep(1)
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-4']").send_keys("1")
-    time.sleep(1)
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-5']").send_keys("1")
-    time.sleep(1)
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-6']").send_keys("1")
-    time.sleep(1)
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-7']").send_keys("1")
-    time.sleep(1)
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-8']").send_keys("1")
-    time.sleep(1)
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-9']").send_keys("1")
-    time.sleep(1)
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-10']").send_keys("1")
-    time.sleep(1)
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-11']").send_keys("1")
-    time.sleep(1)
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-12']").send_keys("1")
+    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-1']").send_keys("1")
+    # time.sleep(1)
+    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-2']").send_keys("1")
+    # time.sleep(1)
+    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-3']").send_keys("1")
+    # time.sleep(1)
+
+    # driver.find_element(by=AppiumBy.ANDROID_UIAUTOMATOR, value=
+    #     'new UiScrollable(new UiSelector().text("Add more products from BOL").scrollable(true)).scrollToEnd(1, 5)'
+    # )
+    #
+    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-4']").send_keys("1")
+    # time.sleep(1)
+
+    # element = driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="Add more products from BOL"]')
+    # element.location_once_scrolled_into_view
+    # time.sleep(2)
+
+    # targetElement = driver.find_element_by_android_uiautomator(
+    #     'new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text("Element text").instance(0));')
+    #
+    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-5']").send_keys("1")
+    # time.sleep(1)
+    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-6']").send_keys("1")
+    # time.sleep(1)
+    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-7']").send_keys("1")
+    # time.sleep(1)
+    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-8']").send_keys("1")
+    # time.sleep(1)
+    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-9']").send_keys("1")
+    # time.sleep(1)
+    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-10']").send_keys("1")
+    # time.sleep(1)
+    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-11']").send_keys("1")
+    # time.sleep(1)
+    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-12']").send_keys("1")
     time.sleep(1)
 
     # next

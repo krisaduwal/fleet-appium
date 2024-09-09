@@ -6,6 +6,9 @@ from dotenv import load_dotenv
 from appium import webdriver
 from appium.options.common.base import AppiumOptions
 from appium.webdriver.common.appiumby import AppiumBy
+
+from selenium.webdriver.common.action_chains import ActionChains
+
 from selenium.webdriver.support import expected_conditions as EC
 
 
@@ -100,8 +103,7 @@ def initial():
     print("login bhayooo?!")
 
     # dont allow
-    driver.find_element(by=AppiumBy.XPATH,
-                        value="//android.widget.Button[@resource-id='com.android.permissioncontroller:id/permission_deny_button']").click()
+    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.Button[@resource-id='com.android.permissioncontroller:id/permission_deny_button']").click()
     time.sleep(1)
 
     # deny location access
