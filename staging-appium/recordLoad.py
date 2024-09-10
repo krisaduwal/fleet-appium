@@ -2,7 +2,7 @@ import time
 
 from selenium.webdriver.support import expected_conditions as EC
 
-
+from datetime import datetime, timedelta
 from initial import *
 
 def load():
@@ -47,15 +47,37 @@ def load():
     driver.find_element(by=AppiumBy.XPATH, value="//android.widget.RelativeLayout").click()
     driver.find_element(by=AppiumBy.XPATH, value="//android.view.ViewGroup[@content-desc='Photo taken on Sep 3, 2024 10:52:31 AM']").click()
     time.sleep(2)
-    #       card info
-    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='card-in-time']").send_keys("1515")
-    time.sleep(1)
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='card-out-time']").send_keys("1020")
+
     #       card date
     driver.find_element(by=AppiumBy.XPATH, value="//android.view.ViewGroup[@resource-id='card-in-date']").click()
     driver.find_element(by=AppiumBy.XPATH, value="//android.view.View[@content-desc='02 September 2024']").click()
     time.sleep(1)
     driver.find_element(by=AppiumBy.XPATH, value="//android.widget.Button[@resource-id='android:id/button1']").click()
+    time.sleep(1)
+
+    #       card info
+    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='card-in-time']").send_keys("1515")
+
+    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='card-in-time']").send_keys(
+    #     "1015")
+    current_time = datetime.now()
+
+
+    # Add 5 minutes to the current time
+    new_time = current_time + timedelta(minutes=5)
+
+    # Format the time to display only hours, minutes, and seconds
+    outTime = new_time.strftime("%H%M")
+    # time.sleep(1)
+
+    print(outTime)
+    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='card-out-time']").click()
+
+    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='card-out-time']").send_keys(outTime)
+
+    time.sleep(5)
+
+    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup').click()
     time.sleep(1)
 
     # supplier
@@ -87,46 +109,20 @@ def load():
 
     # breakdown
     driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-0']").send_keys("13")
-    time.sleep(1)
-    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-1']").send_keys("1")
     # time.sleep(1)
-    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-2']").send_keys("1")
-    # time.sleep(1)
-    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-3']").send_keys("1")
-    # time.sleep(1)
-
-    # driver.find_element(by=AppiumBy.ANDROID_UIAUTOMATOR, value=
-    #     'new UiScrollable(new UiSelector().text("Add more products from BOL").scrollable(true)).scrollToEnd(1, 5)'
-    # )
-    #
-    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-4']").send_keys("1")
-    # time.sleep(1)
-
-    # element = driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="Add more products from BOL"]')
-    # element.location_once_scrolled_into_view
-    # time.sleep(2)
-
-    # targetElement = driver.find_element_by_android_uiautomator(
-    #     'new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text("Element text").instance(0));')
-    #
-    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-5']").send_keys("1")
-    # time.sleep(1)
-    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-6']").send_keys("1")
-    # time.sleep(1)
-    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-7']").send_keys("1")
-    # time.sleep(1)
-    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-8']").send_keys("1")
-    # time.sleep(1)
-    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-9']").send_keys("1")
-    # time.sleep(1)
-    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-10']").send_keys("1")
-    # time.sleep(1)
-    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-11']").send_keys("1")
-    # time.sleep(1)
-    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-12']").send_keys("1")
     time.sleep(1)
 
     # next
     driver.find_element(by=AppiumBy.XPATH, value="//android.view.ViewGroup[@resource-id='next']").click()
+    time.sleep(2)
+
+    # delay check
+    driver.find_element(by=AppiumBy.XPATH, value='//android.view.ViewGroup[@resource-id="delay-yes"]').click()
+    time.sleep(2)
+    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="delay-reason"]').send_keys("technical problem")
+    time.sleep(1)
+    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="Done Loading"]').click()
+    
+
 initial()
 load()
