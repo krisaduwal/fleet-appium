@@ -1,6 +1,4 @@
-import os
-
-from initial import *
+from features.initial import *
 
 dotenv_path = Path('../.venv/.env')
 

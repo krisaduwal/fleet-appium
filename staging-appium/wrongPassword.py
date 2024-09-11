@@ -1,3 +1,0 @@
-from initial import *
-
-wrong()

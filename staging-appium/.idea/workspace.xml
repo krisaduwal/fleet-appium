@@ -24,30 +24,41 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2lKIVZmjmsf9UILTOSavsBRqg4m" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for test_login.test_correct.executor": "Run",
-    "Python tests.Python tests for test_login.test_incorrectNum.executor": "Run",
-    "Python tests.Python tests for test_login.test_incorrectPassword.executor": "Run",
-    "Python tests.Python tests for test_wrongPassword.test_wrong.executor": "Run",
-    "Python.createAsset.executor": "Run",
-    "Python.fuelTransfer.executor": "Run",
-    "Python.initial.executor": "Run",
-    "Python.record.executor": "Run",
-    "Python.recordDelivery.executor": "Run",
-    "Python.recordLoad.executor": "Run",
-    "Python.scheduleDelivery.executor": "Run",
-    "Python.scheduleLoad.executor": "Run",
-    "Python.wrongPassword.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_login.test_correct.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_login.test_incorrectNum.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_login.test_incorrectPassword.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_permissions.test_nearbyDevices.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_permissions.test_permission.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_wrongPassword.test_wrong.executor&quot;: &quot;Run&quot;,
+    &quot;Python.createAsset.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fuelTransfer.executor&quot;: &quot;Run&quot;,
+    &quot;Python.initial.executor&quot;: &quot;Run&quot;,
+    &quot;Python.orderWell.executor&quot;: &quot;Run&quot;,
+    &quot;Python.record.executor&quot;: &quot;Run&quot;,
+    &quot;Python.recordDelivery.executor&quot;: &quot;Run&quot;,
+    &quot;Python.recordLoad.executor&quot;: &quot;Run&quot;,
+    &quot;Python.scheduleDelivery.executor&quot;: &quot;Run&quot;,
+    &quot;Python.scheduleLoad.executor&quot;: &quot;Run&quot;,
+    &quot;Python.wrongPassword.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Python tests.Python tests for test_login.test_correct">
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\appium-test-fleet\staging-appium\features" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Python tests for test_login.test_incorrectPassword">
     <configuration name="Python tests for test_login.test_correct" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="staging-appium" />
       <option name="ENV_FILES" value="" />
@@ -93,7 +104,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for testcases.test_login" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_permissions.test_nearbyDevices" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="staging-appium" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -104,16 +115,32 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;testcases.test_login&quot;" />
+      <option name="_new_target" value="&quot;test_permissions.test_nearbyDevices&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_permissions.test_permission" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="staging-appium" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_permissions.test_permission&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_login.test_correct" />
         <item itemvalue="Python tests.Python tests for test_login.test_incorrectPassword" />
         <item itemvalue="Python tests.Python tests for test_login.test_incorrectNum" />
-        <item itemvalue="Python tests.Python tests for testcases.test_login" />
+        <item itemvalue="Python tests.Python tests for test_permissions.test_permission" />
+        <item itemvalue="Python tests.Python tests for test_permissions.test_nearbyDevices" />
+        <item itemvalue="Python tests.Python tests for test_login.test_correct" />
       </list>
     </recent_temporary>
   </component>

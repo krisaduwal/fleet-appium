@@ -1,9 +1,5 @@
-import time
-
-from selenium.webdriver.support import expected_conditions as EC
-
 from datetime import datetime, timedelta
-from initial import *
+from features.initial import *
 
 def load():
     driver.find_element(by=AppiumBy.XPATH, value="//android.widget.FrameLayout[@resource-id='android:id/content']/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.View").click()
@@ -30,11 +26,15 @@ def load():
     time.sleep(2)
 
     driver.find_element(by=AppiumBy.XPATH, value="//android.view.ViewGroup[@resource-id='submit']").click()
+    print("load selection done")
     driver.implicitly_wait(20)
+
+def addBOL():
 
      # permission
     driver.find_element(by=AppiumBy.XPATH, value="//android.widget.Button[@resource-id='com.android.permissioncontroller:id/permission_allow_one_time_button']").click()
     time.sleep(1)
+
 
     # add BOL
     #       BOL num
@@ -55,13 +55,8 @@ def load():
     driver.find_element(by=AppiumBy.XPATH, value="//android.widget.Button[@resource-id='android:id/button1']").click()
     time.sleep(1)
 
-    #       card info
-    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='card-in-time']").send_keys("1515")
-
-    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='card-in-time']").send_keys(
-    #     "1015")
+    # card out time
     current_time = datetime.now()
-
 
     # Add 5 minutes to the current time
     new_time = current_time + timedelta(minutes=5)
@@ -70,7 +65,7 @@ def load():
     outTime = new_time.strftime("%H%M")
     # time.sleep(1)
 
-    print(outTime)
+    # print(outTime)
     driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='card-out-time']").click()
 
     driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='card-out-time']").send_keys(outTime)
@@ -98,15 +93,6 @@ def load():
     driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='total-net']").send_keys(13)
     time.sleep(1)
 
-    # el = driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-12']")
-    # action = ActionChains(driver)
-    # action.move_to_element(el).send_keys("1").perform()
-    # time.sleep(3)
-    # driver.find_element(by=AppiumBy.ANDROID_UIAUTOMATOR, value=
-    #     'new UiScrollable(new UiSelector().text("Add more products from BOL").scrollable(true)).scrollToEnd(1, 5)'
-    # )
-    # time.sleep(2)
-
     # breakdown
     driver.find_element(by=AppiumBy.XPATH, value="//android.widget.EditText[@resource-id='comp-0']").send_keys("13")
     # time.sleep(1)
@@ -114,7 +100,10 @@ def load():
 
     # next
     driver.find_element(by=AppiumBy.XPATH, value="//android.view.ViewGroup[@resource-id='next']").click()
-    time.sleep(2)
+    print("BOL details added")
+
+
+def delayCheck():
 
     # delay check
     driver.find_element(by=AppiumBy.XPATH, value='//android.view.ViewGroup[@resource-id="delay-yes"]').click()
@@ -122,7 +111,29 @@ def load():
     driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="delay-reason"]').send_keys("technical problem")
     time.sleep(1)
     driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="Done Loading"]').click()
-    
+
+    # verify toast message
+    driver.implicitly_wait(10)
+    try:
+        # Wait for the toast message to appear with explicit wait
+        from selenium.webdriver.support.wait import WebDriverWait
+        toast_message_element = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((AppiumBy.XPATH, ".//*[contains(@text, 'Record')]"))
+        )
+
+        # Get the text from the toast message
+        toast_message_text = toast_message_element.text
+
+        # Verify that the toast message contains the word "Transfer"
+        assert "record was successfully created" in toast_message_text.lower()
+        print("Toast message verified, load order recorded!")
+
+    except Exception as e:
+        print("Failed to verify toast message: {str(e)}")
+
+
 
 initial()
 load()
+addBOL()
+delayCheck()

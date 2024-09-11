@@ -18,7 +18,7 @@ from selenium.webdriver.common.actions import interaction
 from selenium.webdriver.common.actions.action_builder import ActionBuilder
 from selenium.webdriver.common.actions.pointer_input import PointerInput
 
-dotenv_path = Path('.venv/.env')
+dotenv_path = Path('../.venv/.env')
 
 load_dotenv(dotenv_path=dotenv_path)
 
@@ -110,24 +110,12 @@ def initial():
     driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='Deny']").click()
     time.sleep(2)
 
-    # shift = driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='Great! you do not have any tasks right now to perform']").text
-    # assert "Great" in shift
-    # print("log in successful")
 
     # menu
     driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='']").click()
     time.sleep(2)
 
-    # settings
-    # driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='Settings']").click()
-    # time.sleep(1)
 
-    # # darkmode
-    # driver.find_element(by=AppiumBy.XPATH,
-    #                     value="//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup").click()
-    #
-    # time.sleep(10)
-    # driver.quit()
 
 def wrong():
 

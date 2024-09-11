@@ -1,6 +1,4 @@
-import time
-
-from initial import *
+from features.initial import *
 
 def delivery():
 
