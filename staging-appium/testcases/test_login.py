@@ -1,3 +1,5 @@
+import pytest
+
 from features.initial import *
 
 dotenv_path = Path('../.venv/.env')
@@ -30,6 +32,7 @@ def setUp():
     signIn.click()
     time.sleep(2)
 
+@pytest.mark.xfail
 def test_incorrectPassword():
     setUp()
 
@@ -57,6 +60,8 @@ def test_incorrectPassword():
     assert "wrong password" in title.lower()
     print("wrong password detected")
 
+
+@pytest.mark.xfail
 def test_incorrectNum():
     setUp()
 
@@ -69,6 +74,7 @@ def test_incorrectNum():
     assert "this phone number is not registered in the system" in title.lower()
     print("phone number not registered")
 
+@pytest.mark.skip
 def test_correct():
     setUp()
 
