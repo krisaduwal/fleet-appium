@@ -2,7 +2,7 @@ import time
 
 from test_login import *
 
-def test_permission():
+def test_allow():
     # setUp()
     test_correct()
     driver.find_element(by=AppiumBy.XPATH, value='//android.widget.Button[@resource-id="com.android.permissioncontroller:id/permission_allow_button"]').click()
@@ -27,9 +27,22 @@ def test_permission():
     print("location permission granted")
 
     # back
+    time.sleep(2)
     driver.find_element(by=AppiumBy.XPATH, value='//android.widget.ImageButton[@content-desc="Back"]').click()
+    print("back to main page")
+    test_verifyMain()
 
-    title = driver.find_element(by=AppiumBy.XPATH, value="//android.view.View[@text='Today's Shift']").text
-    assert "today's shift" in title.lower()
+
+def test_deny():
+    test_correct()
+    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.Button[@resource-id="com.android.permissioncontroller:id/permission_deny_button"]').click()
+    time.sleep(2)
+    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="Deny"]').click()
+    test_verifyMain()
+
+def test_verifyMain():
+    driver.implicitly_wait(10)
+    title = driver.find_element(by=AppiumBy.XPATH,
+                                value='//android.widget.TextView[@text="Great! you do not have any tasks right now to perform"]').text
+    assert "great! you do not have" in title.lower()
     print("main page loaded")
-

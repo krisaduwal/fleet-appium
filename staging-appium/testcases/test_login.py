@@ -74,7 +74,7 @@ def test_incorrectNum():
     assert "this phone number is not registered in the system" in title.lower()
     print("phone number not registered")
 
-@pytest.mark.skip
+# @pytest.mark.skip
 def test_correct():
     setUp()
 
