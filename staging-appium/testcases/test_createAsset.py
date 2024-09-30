@@ -5,26 +5,31 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from test_login import *
 from test_permissions import *
-
+import pytest
 from test_menu import *
 
 
 def test_createProcess():
     test_addCustomer()
     # select customer
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup').click()
+    driver.find_element(by=AppiumBy.XPATH,
+                        value='//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup').click()
     driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="100 ASSETS CUSTOMER"]').click()
     time.sleep(2)
 
     # select location
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup').click()
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="100 Assets -customer -shipto"]').click()
+    driver.find_element(by=AppiumBy.XPATH,
+                        value='//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup').click()
+    driver.find_element(by=AppiumBy.XPATH,
+                        value='//android.widget.TextView[@text="100 Assets -customer -shipto"]').click()
     time.sleep(1)
+
 
 def test_tank():
     test_createProcess()
     # select asset type
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup').click()
+    driver.find_element(by=AppiumBy.XPATH,
+                        value='//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.view.ViewGroup').click()
     driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="tank"]').click()
     time.sleep(2)
 
@@ -33,7 +38,8 @@ def test_tank():
     print("tank asset selected")
 
     # asset name
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@text="Enter asset name"]').send_keys('my tankkk')
+    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@text="Enter asset name"]').send_keys(
+        'my tankkk')
     time.sleep(1)
 
     # fuel capacity
@@ -41,15 +47,17 @@ def test_tank():
     time.sleep(1)
 
     # tank id
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@text="Enter Tank ID"]').send_keys(6566)
+    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@text="Enter Tank ID"]').send_keys(6006)
     time.sleep(1)
 
     # tank length
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@text="Enter Length (In feet)"]').send_keys(15)
+    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@text="Enter Length (In feet)"]').send_keys(
+        15)
     time.sleep(1)
 
     # tank diameter
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@text="Enter Diamater (In feet)"]').send_keys(7)
+    driver.find_element(by=AppiumBy.XPATH,
+                        value='//android.widget.EditText[@text="Enter Diamater (In feet)"]').send_keys(7)
     time.sleep(1)
 
     # select product type
@@ -61,6 +69,7 @@ def test_tank():
     test_createButton()
     print("tank asset created")
 
+
 def test_vehicle():
     test_createProcess()
     driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="Choose asset type"]').click()
@@ -69,7 +78,8 @@ def test_vehicle():
     time.sleep(1)
 
     # asset name
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@text="Enter asset name"]').send_keys("my vehicle")
+    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@text="Enter asset name"]').send_keys(
+        "my vehicle")
     time.sleep(1)
 
     # fuel capacity
@@ -77,7 +87,8 @@ def test_vehicle():
     time.sleep(1)
 
     # license plate num
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@text="Enter Licenseplate No."]').send_keys("7909")
+    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@text="Enter Licenseplate No."]').send_keys(
+        "7909")
     time.sleep(1)
 
     # product type
@@ -88,6 +99,7 @@ def test_vehicle():
 
     test_createButton()
     print("vehicle asset added")
+
 
 def test_createButton():
     driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="Create"]').click()

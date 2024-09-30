@@ -1,13 +1,14 @@
+import os
+
 import pytest
 
-from features.initial import *
+from features.LogIn import *
 
 dotenv_path = Path('../.venv/.env')
 
 load_dotenv(dotenv_path=dotenv_path)
 
 def setUp():
-    driver.implicitly_wait(30)
 
     # waits until fully loaded
     driver.implicitly_wait(30)
@@ -32,7 +33,7 @@ def setUp():
     signIn.click()
     time.sleep(2)
 
-@pytest.mark.xfail
+# @pytest.mark.xfail
 def test_incorrectPassword():
     setUp()
 

@@ -31,51 +31,53 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for test_createAsset.test_createPage.executor": "Run",
-    "Python tests.Python tests for test_createAsset.test_createProcess.executor": "Run",
-    "Python tests.Python tests for test_createAsset.test_menu.executor": "Run",
-    "Python tests.Python tests for test_createAsset.test_tank.executor": "Run",
-    "Python tests.Python tests for test_createAsset.test_vehicle.executor": "Run",
-    "Python tests.Python tests for test_login.test_correct.executor": "Run",
-    "Python tests.Python tests for test_login.test_incorrectNum.executor": "Run",
-    "Python tests.Python tests for test_login.test_incorrectPassword.executor": "Run",
-    "Python tests.Python tests for test_logout.test_inactivity.executor": "Run",
-    "Python tests.Python tests for test_menu.test_assignBarcode.executor": "Run",
-    "Python tests.Python tests for test_menu.test_blendCalculator.executor": "Run",
-    "Python tests.Python tests for test_menu.test_orderWell.executor": "Run",
-    "Python tests.Python tests for test_menu.test_schedule.executor": "Run",
-    "Python tests.Python tests for test_menu.test_today.executor": "Run",
-    "Python tests.Python tests for test_permissions.test_allow.executor": "Run",
-    "Python tests.Python tests for test_permissions.test_deny.executor": "Run",
-    "Python tests.Python tests for test_permissions.test_nearbyDevices.executor": "Run",
-    "Python tests.Python tests for test_permissions.test_permission.executor": "Run",
-    "Python tests.Python tests for test_wrongPassword.test_wrong.executor": "Run",
-    "Python tests.Python tests in test_login.py.executor": "Run",
-    "Python tests.Python tests in test_logout.py.executor": "Run",
-    "Python tests.Python tests in test_raise.py.executor": "Run",
-    "Python.createAsset.executor": "Run",
-    "Python.fuelTransfer.executor": "Run",
-    "Python.initial.executor": "Run",
-    "Python.orderWell.executor": "Run",
-    "Python.raise.executor": "Run",
-    "Python.record.executor": "Run",
-    "Python.recordDelivery.executor": "Run",
-    "Python.recordLoad.executor": "Run",
-    "Python.scheduleDelivery.executor": "Run",
-    "Python.scheduleLoad.executor": "Run",
-    "Python.wrongPassword.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_createAsset.test_createPage.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_createAsset.test_createProcess.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_createAsset.test_menu.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_createAsset.test_tank.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_createAsset.test_vehicle.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_login.test_correct.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_login.test_incorrectNum.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_login.test_incorrectPassword.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_logout.test_inactivity.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_menu.test_assignBarcode.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_menu.test_blendCalculator.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_menu.test_orderWell.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_menu.test_schedule.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_menu.test_today.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_permissions.test_allow.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_permissions.test_deny.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_permissions.test_nearbyDevices.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_permissions.test_permission.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_recordLoadOrder.test_load.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_wrongPassword.test_wrong.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_login.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_logout.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_raise.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.createAsset.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fuelTransfer.executor&quot;: &quot;Run&quot;,
+    &quot;Python.initial.executor&quot;: &quot;Run&quot;,
+    &quot;Python.orderWell.executor&quot;: &quot;Run&quot;,
+    &quot;Python.raise.executor&quot;: &quot;Run&quot;,
+    &quot;Python.record.executor&quot;: &quot;Run&quot;,
+    &quot;Python.recordDelivery.executor&quot;: &quot;Run&quot;,
+    &quot;Python.recordLoad.executor&quot;: &quot;Run&quot;,
+    &quot;Python.scheduleDelivery.executor&quot;: &quot;Run&quot;,
+    &quot;Python.scheduleLoad.executor&quot;: &quot;Run&quot;,
+    &quot;Python.wrongPassword.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/appium-test-fleet/staging-appium&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\appium-test-fleet\staging-appium\features" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_createAsset.test_createProcess">
+  <component name="RunManager" selected="Python tests.Python tests for test_createAsset.test_tank">
     <configuration name="Python tests for test_createAsset.test_createProcess" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="staging-appium" />
       <option name="ENV_FILES" value="" />
@@ -91,7 +93,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_menu.test_assignBarcode" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_createAsset.test_tank" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="staging-appium" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -102,7 +104,22 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_menu.test_assignBarcode&quot;" />
+      <option name="_new_target" value="&quot;test_createAsset.test_tank&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_login.test_incorrectPassword" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="staging-appium" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_login.test_incorrectPassword&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -121,7 +138,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_menu.test_orderWell" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_recordLoadOrder.test_load" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="staging-appium" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -132,32 +149,17 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_menu.test_orderWell&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_menu.test_schedule" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="staging-appium" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testcases" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_menu.test_schedule&quot;" />
+      <option name="_new_target" value="&quot;test_recordLoadOrder.test_load&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test_createAsset.test_tank" />
+        <item itemvalue="Python tests.Python tests for test_recordLoadOrder.test_load" />
+        <item itemvalue="Python tests.Python tests for test_login.test_incorrectPassword" />
         <item itemvalue="Python tests.Python tests for test_createAsset.test_createProcess" />
         <item itemvalue="Python tests.Python tests for test_menu.test_blendCalculator" />
-        <item itemvalue="Python tests.Python tests for test_menu.test_assignBarcode" />
-        <item itemvalue="Python tests.Python tests for test_menu.test_orderWell" />
-        <item itemvalue="Python tests.Python tests for test_menu.test_schedule" />
       </list>
     </recent_temporary>
   </component>

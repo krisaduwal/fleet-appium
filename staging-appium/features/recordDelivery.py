@@ -1,4 +1,8 @@
-from features.initial import *
+import time
+
+from features.LogIn import *
+from webdriver_manager.core import driver
+
 
 def delivery():
 

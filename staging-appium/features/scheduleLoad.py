@@ -1,8 +1,13 @@
-from selenium.webdriver.support.wait import WebDriverWait
+import time
 
-from features.initial import *
+from selenium.webdriver.support.wait import WebDriverWait
+from appium import webdriver
+
+
+from features.LogIn import *
 
 def schedule():
+
     driver.find_element(by=AppiumBy.XPATH, value="//android.widget.FrameLayout[@resource-id='android:id/content']/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.View").click()
     time.sleep(1)
     driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='Schedule Load Order']").click()
