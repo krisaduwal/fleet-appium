@@ -1,128 +1,90 @@
 import time
 
 from features.LogIn import *
-from webdriver_manager.core import driver
+class RecordDeliveryPage:
 
+  def __init__(self, driver):
+    self.driver = driver
 
-def delivery():
+    self.record_delivery_el = "//android.widget.TextView[@text='Record Delivery Order']"
+    self.select_customer = "//android.view.ViewGroup[@resource-id='cell-0']"
+    self.truck_el = "(//android.view.ViewGroup[@resource-id='asset-0'])[1]"
+    self.truck_name = "//android.widget.TextView[@text='107 - LCR']"
+    self.trailer1_el = "(//android.view.ViewGroup[@resource-id='asset-1'])[1]"
+    self.trailer1 = "//android.widget.TextView[@text='AG Trailer 1']"
+    self.trailer2_el = "(//android.view.ViewGroup[@resource-id='asset-2'])[1]"
+    self.trailer2 = "//android.widget.TextView[@text='AG Trailer 101']"
+    self.asset_box = "(//android.view.ViewGroup[@resource-id='asset-0'])[2]"
+    self.locked_el = '//android.view.ViewGroup[@resource-id="locked"]'
+    self.submit_el = '//android.view.ViewGroup[@resource-id="submit-button"]'
+    self.another_asset = '//android.view.ViewGroup[@resource-id="asset-4"]'
 
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.FrameLayout[@resource-id='android:id/content']/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.View").click()
-    time.sleep(1)
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='Record Delivery Order']").click()
+    # comp
+    self.comp0_el = '//android.widget.EditText[@resource-id="compartment-0"]'
+    self.continue_el = '//android.widget.TextView[@text="Continue"]'
+    self.comp1_el = '//android.widget.EditText[@resource-id="compartment-1"]'
+    self.comp2_el = '//android.widget.EditText[@resource-id="compartment-2"]'
+    self.comp3_el = '//android.widget.EditText[@resource-id="compartment-3"]'
+    self.comp4_el = '//android.widget.EditText[@resource-id="compartment-4"]'
+    self.comp5_el = '//android.widget.EditText[@resource-id="compartment-5"]'
+    self.comp6_el = '//android.widget.EditText[@resource-id="compartment-6"]'
+    self.comp7_el = '//android.widget.EditText[@resource-id="compartment-7"]'
+
+    self.submit_button = '//android.widget.TextView[@text="Submit"]'
+    self.record_el = '(//android.widget.TextView[@text="Record Delivery Order"])[2]'
+
+  def Delivery(self):
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.record_delivery_el).click()
     time.sleep(1)
 
     # select customer
-    driver.find_element(by=AppiumBy.XPATH, value="//android.view.ViewGroup[@resource-id='cell-0']").click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.select_customer).click()
 
     # truck
-    driver.find_element(by=AppiumBy.XPATH, value="(//android.view.ViewGroup[@resource-id='asset-0'])[1]").click()
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='107 - LCR']").click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.truck_el).click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.truck_name).click()
 
     # trailer
-    driver.find_element(by=AppiumBy.XPATH, value="(//android.view.ViewGroup[@resource-id='asset-1'])[1]").click()
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='AG Trailer 1']").click()
-    driver.find_element(by=AppiumBy.XPATH, value="(//android.view.ViewGroup[@resource-id='asset-2'])[1]").click()
-    driver.find_element(by=AppiumBy.XPATH, value="//android.widget.TextView[@text='AG Trailer 101']").click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.trailer1_el).click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.trailer1).click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.trailer2_el).click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.trailer2).click()
 
     # asset
-    driver.find_element(by=AppiumBy.XPATH, value="(//android.view.ViewGroup[@resource-id='asset-0'])[2]").click()
-    driver.find_element(by=AppiumBy.XPATH, value='//android.view.ViewGroup[@resource-id="locked"]').click()
-    driver.find_element(by=AppiumBy.XPATH, value='//android.view.ViewGroup[@resource-id="submit-button"]').click()
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.view.ViewGroup[@resource-id="asset-4"]').click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.asset_box).click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.locked_el).click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.submit_el).click()
+    time.sleep(1)
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.another_asset).click()
     time.sleep(1)
 
-    # comp
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-0"]').click()
+  def Compartments(self, key1):
+
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.comp0_el).click()
     time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="Continue"]').click()
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-0"]').send_keys(100)
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-1"]').click()
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="Continue"]').click()
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-1"]').send_keys(
-        100)
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-2"]').click()
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="Continue"]').click()
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-2"]').send_keys(
-        100)
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-3"]').click()
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="Continue"]').click()
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-3"]').send_keys(
-        100)
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-4"]').click()
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="Continue"]').click()
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-4"]').send_keys(
-        100)
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-5"]').click()
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="Continue"]').click()
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-5"]').send_keys(
-        100)
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-6"]').click()
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="Continue"]').click()
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-6"]').send_keys(
-        100)
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-7"]').click()
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="Continue"]').click()
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-7"]').send_keys(
-        100)
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-8"]').click()
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="Continue"]').click()
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-8"]').send_keys(
-        100)
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-9"]').click()
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="Continue"]').click()
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-9"]').send_keys(
-        100)
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-10"]').click()
-    time.sleep(2)
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="Continue"]').click()
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.EditText[@resource-id="compartment-10"]').send_keys(
-        100)
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.continue_el).click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.comp0_el).send_keys(key1)
     time.sleep(2)
 
-    # submit
-    driver.find_element(by=AppiumBy.XPATH, value='//android.widget.TextView[@text="Submit"]').click()
-    time.sleep(2)
-
+  def Submit(self):
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.submit_button).click()
+    self.driver.implicitly_wait(5)
     # record
-    driver.find_element(by=AppiumBy.XPATH, value='(//android.widget.TextView[@text="Record Delivery Order"])[2]').click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.record_el).click()
 
     # verify
-    driver.implicitly_wait(10)
+    self.driver.implicitly_wait(10)
     try:
-        # Wait for the toast message to appear with explicit wait
-        from selenium.webdriver.support.wait import WebDriverWait
-        toast_message_element = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((AppiumBy.XPATH, ".//*[contains(@text, 'Record')]"))
-        )
+      # Wait for the toast message to appear with explicit wait
+      from selenium.webdriver.support.wait import WebDriverWait
+      self.toast_message_element = self.driver.find_element(by=AppiumBy.XPATH, value= ".//*[contains(@text, 'Record')]")
 
-        # Get the text from the toast message
-        toast_message_text = toast_message_element.text
+      # Get the text from the toast message
+      toast_message_text = self.toast_message_element.text
 
-        # Verify that the toast message contains the word "Transfer"
-        assert "Record" in toast_message_text
-        print("Toast message verified,  recorded!")
+      # Verify that the toast message contains the word "Transfer"
+      assert "Record" in toast_message_text
+      print("Toast message verified,  recorded!")
 
     except Exception as e:
-        print("Failed to verify toast message: {str(e)}")
-initial()
-delivery()
+      print("Failed to verify toast message: {str(e)}")

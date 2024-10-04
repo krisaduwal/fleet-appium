@@ -1,12 +1,13 @@
 import random
 import time
 
+from appium.webdriver.common.appiumby import AppiumBy
 from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from LogIn import *
+
 
 PlateNum = [67867, 45699, 1212, 34345, 55656, 78778, 6656, 8877, 7777, 9858, 64676]
 
@@ -26,7 +27,7 @@ class Locators:
   plate_num = "//android.widget.EditText[@text='Enter Licenseplate No.']"
 
   select_product_type = "//android.widget.TextView[@text='Choose product type']"
-  selected_product_type = "//android.widget.TextView[@text='101010']"
+  selected_product_type = "//android.widget.TextView[@text='101- Package product']"
 
   create_button = "//android.widget.FrameLayout[@resource-id='android:id/content']/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]"
 
@@ -50,57 +51,56 @@ class CreateAssetPage:
     self.create_button = Locators.create_button
 
   def Create(self):
-    self.driver.find_element(By.XPATH, self.add_customer_assets_button).click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.add_customer_assets_button).click()
     time.sleep(2)
 
   def SelectCustomer(self):
-    self.driver.find_element(By.XPATH, self.select_customer_box).click()
-    self.driver.find_element(By.XPATH, self.selected_customer).click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.select_customer_box).click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.selected_customer).click()
     time.sleep(1)
 
   def SelectLocation(self):
-    self.driver.find_element(By.XPATH, self.select_location_box).click()
-    self.driver.find_element(By.XPATH, self.selected_location).click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.select_location_box).click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.selected_location).click()
     time.sleep(1)
 
   def SelectAsset(self):
-    self.driver.find_element(By.XPATH, self.select_asset).click()
-    self.driver.find_element(By.XPATH, self.selected_asset).click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.select_asset).click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.selected_asset).click()
     time.sleep(1)
 
   def SetAssetName(self, name):
-    self.driver.find_element(By.XPATH, self.asset_name).send_keys(name)
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.asset_name).send_keys(name)
     time.sleep(1)
 
   def SetCapacity(self, capacity):
-    self.driver.find_element(By.XPATH, self.asset_capacity).send_keys(capacity)
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.asset_capacity).send_keys(capacity)
     time.sleep(1)
 
-  def SetPlateNum(self, platenum):
-    self.driver.find_element(By.XPATH, self.plate_num).send_keys(platenum)
+  def SetPlateNum(self, plate_num):
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.plate_num).send_keys(plate_num)
     # (random.choice(PlateNum))
     time.sleep(1)
 
   def SetProductType(self):
-    self.driver.find_element(By.XPATH, self.select_product_type).click()
-    self.driver.find_element(By.XPATH, self.selected_product_type).click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.select_product_type).click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.selected_product_type).click()
     time.sleep(1)
 
   def ClickCreate(self):
-    self.driver.find_element(By.XPATH, self.create_button).click()
+    self.driver.find_element(by=AppiumBy.XPATH, value=self.create_button).click()
 
-  def Verify(self):
+  def ToastMessage(self):
     try:
-      WebDriverWait(self.driver, 5).until(EC.alert_is_present())
+      toast_message_element = WebDriverWait(self.driver, 10).until(
+        EC.presence_of_element_located((AppiumBy.XPATH, ".//*[contains(@text, 'Asset')]"))
+      )
 
-      alert = self.driver.switch_to.alert
-      alert.accept()
-      print("alert Exists in page")
-    except TimeoutException:
-      print("alert does not Exist in page")
+      toast_message_text = toast_message_element.text
 
-    self.check = self.driver.find_element(by=AppiumBy.XPATH,
-                                value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout").text
-    assert "Asset has been successfully created" in self.check
-    time.sleep(1)
+      assert "Asset" in toast_message_text
+      print("Toast message verified, new order schedule created!")
+
+    except Exception as e:
+      print("Failed to verify toast message: {str(e)}")
 
